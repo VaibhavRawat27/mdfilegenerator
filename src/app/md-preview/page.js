@@ -70,10 +70,37 @@ console.log("Hello Markdown");
     setDeleteFileDialog({ show: false, file: "" });
   };
 
-  // Copy content
+  // Copy content (mobile-friendly)
   const copyMarkdown = async () => {
-    await navigator.clipboard.writeText(files[activeFile]);
-    alert("Copied to clipboard");
+    const text = files[activeFile];
+    if (navigator?.clipboard?.writeText) {
+      try {
+        await navigator.clipboard.writeText(text);
+        alert("Copied to clipboard!");
+      } catch (err) {
+        console.error("Clipboard write failed:", err);
+        fallbackCopy(text);
+      }
+    } else {
+      fallbackCopy(text);
+    }
+  };
+
+  const fallbackCopy = (text) => {
+    const textarea = document.createElement("textarea");
+    textarea.value = text;
+    textarea.setAttribute("readonly", "");
+    textarea.style.position = "absolute";
+    textarea.style.left = "-9999px";
+    document.body.appendChild(textarea);
+    textarea.select();
+    try {
+      document.execCommand("copy");
+      alert("Copied to clipboard!");
+    } catch (err) {
+      alert("Failed to copy clipboard");
+    }
+    document.body.removeChild(textarea);
   };
 
   // Download content
@@ -95,11 +122,11 @@ console.log("Hello Markdown");
         <h1 className="font-semibold text-lg">Markdown IDE</h1>
         <div className="flex gap-4 text-sm md:text-base">
           <Link
-  href="/generate"
-  className="hover:text-white text-zinc-400 px-3 py-1 border border-zinc-600 rounded inline-block"
->
-  Generate
-</Link>
+            href="/generate"
+            className="hover:text-white text-zinc-400 px-3 py-1 border border-zinc-600 rounded inline-block"
+          >
+            Generate
+          </Link>
           <button
             onClick={copyMarkdown}
             className="hover:text-white text-zinc-400 px-3 py-1 border border-zinc-600 rounded cursor-pointer"
