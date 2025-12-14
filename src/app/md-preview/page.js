@@ -94,6 +94,11 @@ console.log("Hello Markdown");
         <h1 className="font-semibold text-lg">Markdown IDE</h1>
         <div className="flex gap-4 text-sm md:text-base">
           <button
+            className="hover:text-white text-zinc-400 px-3 py-1 border border-zinc-600 rounded"
+          >
+            Generate
+          </button>
+          <button
             onClick={copyMarkdown}
             className="hover:text-white text-zinc-400 px-3 py-1 border border-zinc-600 rounded"
           >

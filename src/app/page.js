@@ -1,6 +1,31 @@
+"use client"; 
 import Link from "next/link";
+import { useEffect, useState } from "react";
+
 
 export default function Home() {
+
+  const [stats, setStats] = useState({ stars: 0, forks: 0 });
+  const username = "your-username";
+  const repo = "mdFileGenerator";
+
+  useEffect(() => {
+    const fetchStats = async () => {
+      try {
+        const res = await fetch(`https://api.github.com/repos/${username}/${repo}`);
+        const data = await res.json();
+        setStats({
+          stars: data.stargazers_count || 0,
+          forks: data.forks_count || 0,
+        });
+      } catch (error) {
+        console.error("Failed to fetch GitHub stats:", error);
+      }
+    };
+
+    fetchStats();
+  }, []);
+
   return (
     <div className="min-h-screen bg-zinc-50 dark:bg-black flex justify-center">
       <main className="w-full max-w-6xl px-6 py-16 sm:px-10 lg:px-20 bg-white dark:bg-black">
@@ -11,14 +36,23 @@ export default function Home() {
             mdFileGenerator
           </h1>
 
-          <a
-            href="https://github.com/your-username/mdFileGenerator"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sm font-medium text-zinc-600 hover:text-black dark:text-zinc-400 dark:hover:text-white"
-          >
-            GitHub
-          </a>
+       
+<div className="flex flex-col gap-1 text-zinc-400 text-xs md:text-sm">
+      <a
+        href={`https://github.com/${username}/${repo}`}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="font-medium hover:text-white"
+      >
+        View on GitHub
+      </a>
+
+      <div className="flex items-center gap-4 mt-1">
+        <span>Stars: {stats.stars}</span>
+        <span>Forks: {stats.forks}</span>
+      </div>
+    </div>
+
         </header>
 
         {/* Hero */}
@@ -44,19 +78,19 @@ export default function Home() {
 
             <Link
               href="/md-preview"
-              className="inline-flex h-12 items-center justify-center rounded-lg bg-black px-8 text-sm font-medium text-white transition hover:bg-zinc-800 dark:bg-white dark:text-black dark:hover:bg-zinc-200"
+              className="inline-flex h-12 items-center justify-center rounded-lg border border-zinc-300 px-8 text-sm font-medium text-black transition hover:bg-zinc-100 dark:border-zinc-700 dark:text-white dark:hover:bg-zinc-900"
             >
               Markdown Previewer
             </Link>
 
-            <a
+            {/* <a
               href="https://github.com/your-username/mdFileGenerator"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex h-12 items-center justify-center rounded-lg border border-zinc-300 px-8 text-sm font-medium text-black transition hover:bg-zinc-100 dark:border-zinc-700 dark:text-white dark:hover:bg-zinc-900"
             >
               View Repository
-            </a>
+            </a> */}
           </div>
         </section>
 
