@@ -42,6 +42,13 @@ export default function Home() {
               Generate Markdown
             </Link>
 
+            <Link
+              href="/generate"
+              className="inline-flex h-12 items-center justify-center rounded-lg bg-black px-8 text-sm font-medium text-white transition hover:bg-zinc-800 dark:bg-white dark:text-black dark:hover:bg-zinc-200"
+            >
+              Markdown Previewer
+            </Link>
+
             <a
               href="https://github.com/your-username/mdFileGenerator"
               target="_blank"
@@ -98,10 +105,10 @@ export default function Home() {
           </h3>
 
           <ul className="mt-6 space-y-3 text-zinc-600 dark:text-zinc-400">
-            <li>Choose the type of Markdown file</li>
-            <li>Fill in required details</li>
-            <li>Preview generated Markdown</li>
-            <li>Copy or download instantly</li>
+            <li>1. Choose the type of Markdown file</li>
+            <li>2. Fill in required details</li>
+            <li>3. Preview generated Markdown</li>
+            <li>4. Copy or download instantly</li>
           </ul>
         </section>
 
