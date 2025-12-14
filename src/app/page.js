@@ -43,7 +43,7 @@ export default function Home() {
             </Link>
 
             <Link
-              href="/generate"
+              href="/md-preview"
               className="inline-flex h-12 items-center justify-center rounded-lg bg-black px-8 text-sm font-medium text-white transition hover:bg-zinc-800 dark:bg-white dark:text-black dark:hover:bg-zinc-200"
             >
               Markdown Previewer
