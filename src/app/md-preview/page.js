@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
@@ -93,20 +94,21 @@ console.log("Hello Markdown");
       <header className="flex items-center justify-between px-4 py-3 border-b border-zinc-800">
         <h1 className="font-semibold text-lg">Markdown IDE</h1>
         <div className="flex gap-4 text-sm md:text-base">
-          <button
-            className="hover:text-white text-zinc-400 px-3 py-1 border border-zinc-600 rounded"
-          >
-            Generate
-          </button>
+          <Link
+  href="/generate"
+  className="hover:text-white text-zinc-400 px-3 py-1 border border-zinc-600 rounded inline-block"
+>
+  Generate
+</Link>
           <button
             onClick={copyMarkdown}
-            className="hover:text-white text-zinc-400 px-3 py-1 border border-zinc-600 rounded"
+            className="hover:text-white text-zinc-400 px-3 py-1 border border-zinc-600 rounded cursor-pointer"
           >
             Copy
           </button>
           <button
             onClick={downloadMarkdown}
-            className="hover:text-white text-zinc-400 px-3 py-1 border border-zinc-600 rounded"
+            className="hover:text-white text-zinc-400 px-3 py-1 border border-zinc-600 rounded cursor-pointer"
           >
             Download
           </button>

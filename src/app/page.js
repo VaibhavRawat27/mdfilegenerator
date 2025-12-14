@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 export default function Home() {
 
   const [stats, setStats] = useState({ stars: 0, forks: 0 });
-  const username = "your-username";
+  const username = "VaibhavRawat27";
   const repo = "mdFileGenerator";
 
   useEffect(() => {
