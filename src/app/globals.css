@@ -1,4 +1,6 @@
 @import "tailwindcss";
+@import "highlight.js/styles/github-dark.css";
+
 
 :root {
   --background: #ffffff;
@@ -24,3 +26,50 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+
+/* GitHub Markdown Style */
+.markdown-body {
+  box-sizing: border-box;
+  min-width: 200px;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 24px;
+  color: #e6edf3;
+  background-color: #0d1117;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3 {
+  border-bottom: 1px solid #30363d;
+  padding-bottom: 0.3em;
+}
+
+.markdown-body pre {
+  background-color: #161b22;
+  padding: 16px;
+  border-radius: 6px;
+  overflow-x: auto;
+}
+
+.markdown-body code {
+  background-color: rgba(110,118,129,0.4);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 85%;
+}
+
+.markdown-body blockquote {
+  border-left: 4px solid #30363d;
+  padding-left: 1em;
+  color: #8b949e;
+}
+
+.markdown-body ul {
+  list-style: disc;
+  padding-left: 2em;
+}
+
