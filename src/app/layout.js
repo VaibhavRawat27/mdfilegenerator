@@ -29,6 +29,9 @@ export const metadata = {
     index: true,
     follow: true,
   },
+  verification: {
+    google: "jU2kXgBk1XWDaGSn3DHOJ7ehKIKqyRnipGPWdI8GflU",
+  },
   openGraph: {
     title: "mdFileGenerator",
     description: "Generate professional Markdown README files for GitHub projects.",
@@ -60,7 +63,6 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <meta name="google-site-verification" content="jU2kXgBk1XWDaGSn3DHOJ7ehKIKqyRnipGPWdI8GflU" />
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
