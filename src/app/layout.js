@@ -30,7 +30,7 @@ export const metadata = {
     follow: true,
   },
   verification: {
-    google: "jU2kXgBk1XWDaGSn3DHOJ7ehKIKqyRnipGPWdI8GflU",
+    google: "TTWYVJe594cq-L9GqBYrK_jMnrMD5vB98DGSSOk6yU8",
   },
   openGraph: {
     title: "mdFileGenerator",
