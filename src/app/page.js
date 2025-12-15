@@ -148,7 +148,7 @@ export default function Home() {
 
         {/* Footer */}
         <footer className="mt-32 border-t border-zinc-200 pt-8 text-sm text-zinc-500 dark:border-zinc-800 dark:text-zinc-400">
-          Open source • Built with Next.js • 2025
+          Open source • Vaibhav Rawat • 2025
         </footer>
       </main>
     </div>
